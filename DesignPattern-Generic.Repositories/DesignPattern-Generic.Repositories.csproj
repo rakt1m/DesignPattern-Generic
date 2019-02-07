@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DesignPattern-Generic.DbContext\DesignPattern-Generic.DbContext.csproj" />
     <ProjectReference Include="..\DesignPattern-Generic.Models\DesignPattern-Generic.Models.csproj" />
   </ItemGroup>
 
