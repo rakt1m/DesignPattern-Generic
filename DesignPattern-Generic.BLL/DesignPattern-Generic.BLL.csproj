@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DesignPattern-Generic.Models\DesignPattern-Generic.Models.csproj" />
+    <ProjectReference Include="..\DesignPattern-Generic.Repositories\DesignPattern-Generic.Repositories.csproj" />
   </ItemGroup>
 
 </Project>
