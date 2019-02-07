@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DesignPattern_Generic.Models.EntityModels;
 
 namespace DesignPattern_Generic.Repositories.Contracts
 {
-    interface IDemoModelRepository
+    public interface IDemoModelRepository:IRepository<DemoModel>
     {
     }
 }

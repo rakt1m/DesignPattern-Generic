@@ -5,4 +5,8 @@
     <RootNamespace>DesignPattern_Generic.Repositories</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DesignPattern-Generic.Models\DesignPattern-Generic.Models.csproj" />
+  </ItemGroup>
+
 </Project>
