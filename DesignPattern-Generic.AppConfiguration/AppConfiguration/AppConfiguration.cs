@@ -1,10 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using DesignPattern_Generic.DbContext.ApplicationDbContext;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DesignPattern_Generic.AppConfiguration.AppConfiguration
 {
-    class AppConfiguration
+   public static class AppConfiguration
     {
+        public static void ConfigureServices(IServiceCollection services,IConfiguration configuration)
+        {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("ApplicationDbContext"),
+                b=>b.MigrationsAssembly("DesignPattern-Generic.DbContext")));
+
+
+            //services.AddTransient<IEntityModelRepository, EntityModelRepository>()
+
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+        }
     }
 }

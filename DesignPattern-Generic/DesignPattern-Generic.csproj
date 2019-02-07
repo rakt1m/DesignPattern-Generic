@@ -12,4 +12,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\DesignPattern-Generic.AppConfiguration\DesignPattern-Generic.AppConfiguration.csproj" />
+  </ItemGroup>
+
 </Project>
