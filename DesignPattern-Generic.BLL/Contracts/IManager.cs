@@ -4,7 +4,13 @@ using System.Text;
 
 namespace DesignPattern_Generic.BLL.Contracts
 {
-    interface IManager
+     public interface IManager<T> where T :class 
     {
+        bool Add(T entity);
+        bool Update(T entity);
+        bool Remove(T entity);
+
+        T GetById(int? id);
+        ICollection<T> GetAll();
     }
 }
